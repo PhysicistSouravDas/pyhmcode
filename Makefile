@@ -115,7 +115,7 @@ $(LIB_DIR)/libhmx.a: $(OBJ)
 	$(make_dirs)
 	$(LIBTOOL) $@ $^
 
-$(LIB_DIR)/libhmx_wrapper.so: HMx_wrapper.f90 $(LIB_DIR)/libhmx.a
+$(LIB_DIR)/libhmx_wrapper.so: ./powerspectrum_interface/fortran_wrapper/HMx_wrapper.f90 $(LIB_DIR)/libhmx.a
 	$(make_dirs)
 	$(FC) -o $@ $^ -I$(INCLUDE_DIR) $(LDFLAGS) -shared $(FFLAGS)
 
